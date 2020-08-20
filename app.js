@@ -11,8 +11,7 @@ function bunnylol(){
         }
         return params;
     };
-    const fullCmd = searchParams(window.location.href).search;
-    const currCmd = fullCmd.substring(1, fullCmd.length - 1);
+    const currCmd = searchParams(window.location.href).search;
 
     const fbCmd = cmd(currCmd, "fb", "https://facebook.com/", "https://www.facebook.com/search/top/?q=");
     const gmailCmd = cmd(currCmd, "gm", "https://mail.google.com/mail/u/0", "https://mail.google.com/mail/u/");
@@ -29,15 +28,15 @@ function cmd(currCmd, cmdName, cmdMainURL, cmdSearchURL, force){
     console.log(currCmd, cmdName, cmdMainURL, cmdSearchURL);
     if (currCmd.startsWith(cmdName)){
         if (currCmd === cmdName){
-            // window.location.replace(cmdMainURL);
+            window.location.replace(cmdMainURL);
         }
         if(currCmd.startsWith(`${cmdName + " "}`)){
             const query = currCmd.substring(cmdName.length + 1);
-            // window.location.replace(`${cmdSearchURL + query}`);
+            window.location.replace(`${cmdSearchURL + query}`);
         }
     }
     if (force){
-        // window.location.replace(`${cmdSearchURL + currCmd}`);
+        window.location.replace(`${cmdSearchURL + currCmd}`);
     }
 }
 
