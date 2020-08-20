@@ -25,19 +25,15 @@ function bunnylol(){
 
 
 function cmd(currCmd, cmdName, cmdMainURL, cmdSearchURL, force){
-    console.log(currCmd, cmdName, cmdMainURL, cmdSearchURL);
-    console.log(currCmd.localeCompare(cmdName));
     if (currCmd === cmdName){
-        console.log("HERE");
         window.location.replace(cmdMainURL);
     }
     if(currCmd.startsWith(`${cmdName + " "}`)){
         const query = currCmd.substring(cmdName.length + 1);
-        console.log("HERE 2");
         window.location.replace(`${cmdSearchURL + query}`);
     }
     if (force){
-        // window.location.replace(`${cmdSearchURL + currCmd}`);
+        window.location.replace(`${cmdSearchURL + currCmd}`);
     }
 }
 
