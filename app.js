@@ -12,7 +12,7 @@ async function bunnylol(currCmd){
 }
 
 
-async function cmd(currCmd, cmdName, cmdMainURL, cmdSearchURL, force){
+function cmd(currCmd, cmdName, cmdMainURL, cmdSearchURL, force){
     if (currCmd === cmdName){
         window.location.replace(cmdMainURL);
         return true;
