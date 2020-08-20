@@ -28,7 +28,7 @@ function cmd(currCmd, cmdName, cmdMainURL, cmdSearchURL, force){
     if (currCmd === cmdName){
         window.location.replace(cmdMainURL);
     }
-    if(currCmd.startsWith(`${cmdName + " "}`)){
+    if(currCmd.startsWith(`${cmdName + " "}`) || currCmd.startsWith(`${cmdName + "+"}`)){
         const query = currCmd.substring(cmdName.length + 1);
         window.location.replace(`${cmdSearchURL + query}`);
     }
