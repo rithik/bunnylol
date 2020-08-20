@@ -43,8 +43,10 @@ const searchParams = function (url) {
 
 const currCmd = searchParams(window.location.href).search;
 
-const done = await bunnylol(currCmd);
+bunnylol(currCmd).then((done) => {
+    if (!done){
+        window.location.replace(`https://www.google.com/search?q=${currCmd}`);
+    }
+});
 
-if (!done){
-    window.location.replace(`https://www.google.com/search?q=${currCmd}`);
-}
+
