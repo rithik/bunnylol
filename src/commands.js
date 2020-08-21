@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 export type CommandType = {|
     name: string, 
@@ -6,7 +6,7 @@ export type CommandType = {|
     searchurl?: string,
 |};
 
-type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' |
+export type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' |
                     'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|

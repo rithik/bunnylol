@@ -1,7 +1,11 @@
-// @flow
+// @flow strict
 
-import type {CommandType, CommandDataTableType, ColumnDataTableType} from './commands.js';
+import type {CommandType, CommandNames, CommandDataTableType, ColumnDataTableType} from './commands.js';
 import {COMMANDS} from './commands.js';
+
+const redirect: string => Promise<void> = async function(url: string){
+    await window.location.replace(url);
+}
 
 const bunnylol: string => Promise<boolean> = async function (currCmd: string){
     const arr: Array<string> = currCmd.split(/[ +]/g);
@@ -12,12 +16,10 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
             const command: CommandType = COMMANDS[prefix];
             if (command.searchurl && arr.length !== 1){
                 const [, ...query] = arr;
-                window.location.replace(`${command.searchurl + query.join("+")}`);
-                return true;
+                redirect(`${command.searchurl + query.join("+")}`);
             }
             else {
-                window.location.replace(command.url);
-                return true;
+                redirect(command.url);
             }
         }
     }
@@ -27,7 +29,7 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
 const currCmd: string = new URL(window.location.href).searchParams.get("search") ?? "help";
 
 if (currCmd === "help" || currCmd.length === 0){
-    const data: Array<CommandDataTableType> = Object.keys(COMMANDS).map(command => {
+    const data: Array<CommandDataTableType> = Object.keys(COMMANDS).map((command: CommandNames) => {
         const cmdData = COMMANDS[command];
         return {
             name: cmdData.name, 
@@ -41,19 +43,17 @@ if (currCmd === "help" || currCmd.length === 0){
         {data: 'url', title: "URL"}, 
     ];
     // $FlowFixMe - jQuery import
-    $(document).ready(function() {
-        $('#help-table').DataTable({
-            data: data,
-            columns: columns,
-            order: [[ 1, "asc" ]],
-            paging: false
-        });
+    $('#help-table').DataTable({
+        data: data,
+        columns: columns,
+        order: [[ 1, "asc" ]],
+        paging: false
     });
 }
 else{
     bunnylol(currCmd).then((done: boolean) => {
         if (!done && COMMANDS.DEFAULT.searchurl){
-            window.location.replace(`${COMMANDS.DEFAULT.searchurl}${currCmd}`);
+            redirect(`${COMMANDS.DEFAULT.searchurl}${currCmd}`);
         }
-    }).catch(reject => {console.log(reject);});
+    }).catch((reject: string) => {console.log(reject);});
 }
