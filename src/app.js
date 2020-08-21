@@ -1,29 +1,23 @@
 // @flow
 
-export type CommandType = {
+type CommandType = {
     name: string, 
     url: string, 
     searchurl?: string,
 };
 
-type AllCommandsType = {|
-    fb: CommandType, 
-    gm: CommandType, 
-    sis: CommandType, 
-    col: CommandType, 
-    yt: CommandType, 
-    gh: CommandType,
-    r: CommandType,
-    db: CommandType, 
-    cloud: CommandType,
-    priv: CommandType, 
-    ml: CommandType, 
-    wp: CommandType, 
-    wsj: CommandType,
-    cnn: CommandType, 
-    g: CommandType, 
-    DEFAULT: CommandType
-|};
+type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+
+type CommandDataTableType = {
+    name: string, 
+    url: string, 
+    searchurl?: string,
+    command: CommandNames
+};
+
+type AllCommandsType = { [CommandNames]: CommandType };
+
+type ColumnDataTableType = {data: $Keys<CommandDataTableType>, title: string};
 
 const COMMANDS: AllCommandsType = {
     fb: {
@@ -104,6 +98,7 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
     if (arr.length > 0){
         const prefix: string = arr[0].toLowerCase();
         if (prefix in COMMANDS){
+            // $FlowFixMe - this is actually correct since the prefix is a key.
             const command: CommandType = COMMANDS[prefix];
             if (command.searchurl && arr.length !== 1){
                 const [, ...query] = arr;
@@ -119,23 +114,35 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
     return false;
 }
 
-const searchParam: string => string = function (url: string) {
-    var params = {};
-    var parser = document.createElement('a');
-    parser.href = url;
-    var query = parser.search.substring(1);
-    var vars = query.split('&');
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split('=');
-        params[pair[0]] = decodeURIComponent(pair[1]);
-    }
-    return params.search;
-};
+const currCmd: string = new URL(window.location.href).searchParams.get("search") ?? "";
 
-const currCmd: string = searchParam(window.location.href);
-
-bunnylol(currCmd).then((done: boolean) => {
-    if (!done && COMMANDS.DEFAULT.searchurl){
-        window.location.replace(`${COMMANDS.DEFAULT.searchurl}${currCmd}`);
-    }
-}).catch(reject => {console.log(reject);});
+if (currCmd === "help" || currCmd.length === 0){
+    const data: Array<CommandDataTableType> = Object.keys(COMMANDS).map(command => {
+        const cmdData = COMMANDS[command];
+        return {
+            name: cmdData.name, 
+            url: cmdData.url, 
+            command: command
+        };
+    });
+    const columns: Array<ColumnDataTableType> = [
+        {data: 'command', title: "Command"}, 
+        {data: 'name', title: "Name"}, 
+        {data: 'url', title: "URL"}, 
+    ];
+    // $FlowFixMe - jQuery import
+    $(document).ready( function () {
+        $('#help-table').DataTable({
+            data: data,
+            columns: columns,
+            paging: false
+        });
+    });
+}
+else{
+    bunnylol(currCmd).then((done: boolean) => {
+        if (!done && COMMANDS.DEFAULT.searchurl){
+            window.location.replace(`${COMMANDS.DEFAULT.searchurl}${currCmd}`);
+        }
+    }).catch(reject => {console.log(reject);});
+}
