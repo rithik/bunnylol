@@ -1,7 +1,7 @@
 // @flow
 
-import type {CommandType, CommandNames, CommandDataTableType, AllCommandsType, ColumnDataTableType} from './commands';
-import {COMMANDS} from './commands';
+import type {CommandType, CommandNames, CommandDataTableType, AllCommandsType, ColumnDataTableType} from './commands.js';
+import {COMMANDS} from './commands.js';
 
 const bunnylol: string => Promise<boolean> = async function (currCmd: string){
     const arr: Array<string> = currCmd.split(/[ +]/g);
