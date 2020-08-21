@@ -6,7 +6,7 @@ type CommandType = {
     searchurl?: string,
 };
 
-type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 type CommandDataTableType = {
     name: string, 
@@ -52,6 +52,14 @@ const COMMANDS: AllCommandsType = {
         name: "Reddit",
         url: "https://reddit.com/",
         searchurl: "https://www.reddit.com/search?q="
+    },
+    l: {
+        name: "Linkedin",
+        url: "https://linkedin.com/",
+    },
+    me: {
+        name: "Rithik.me - Personal Website",
+        url: "https://rithik.me/",
     },
     db: {
         name: "CS 4750: Database Systems",
@@ -114,7 +122,7 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
     return false;
 }
 
-const currCmd: string = new URL(window.location.href).searchParams.get("search") ?? "";
+const currCmd: string = new URL(window.location.href).searchParams.get("search") ?? "help";
 
 if (currCmd === "help" || currCmd.length === 0){
     const data: Array<CommandDataTableType> = Object.keys(COMMANDS).map(command => {
