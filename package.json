@@ -11,6 +11,7 @@
     "@babel/core": "^7.11.4",
     "@babel/preset-flow": "^7.10.4",
     "babel-cli": "^6.26.0",
+    "express": "^4.17.1",
     "flow-bin": "^0.131.0"
   }
 }
