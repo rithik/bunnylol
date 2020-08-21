@@ -1,0 +1,16 @@
+{
+  "name": "rithik-bunnylol",
+  "main": "lib/app.js",
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "flow": "flow"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-flow": "^7.10.4",
+    "babel-cli": "^6.26.0",
+    "flow-bin": "^0.131.0"
+  }
+}
