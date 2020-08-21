@@ -17,9 +17,11 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
             if (command.searchurl && arr.length !== 1){
                 const [, ...query] = arr;
                 await redirect(`${command.searchurl + query.join("+")}`);
+                return true;
             }
             else {
                 await redirect(command.url);
+                return true;
             }
         }
     }
