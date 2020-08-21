@@ -135,6 +135,7 @@ if (currCmd === "help" || currCmd.length === 0){
         $('#help-table').DataTable({
             data: data,
             columns: columns,
+            order: [[ 1, "asc" ]],
             paging: false
         });
     });
