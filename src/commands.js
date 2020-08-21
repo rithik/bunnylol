@@ -1,26 +1,26 @@
 // @flow
 
-export type CommandType = {
+export type CommandType = {|
     name: string, 
     url: string, 
     searchurl?: string,
-};
+|};
 
-export type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' |
-                    'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' |
+                    'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
-export type CommandDataTableType = {
+export type CommandDataTableType = {|
     name: string, 
     url: string, 
-    searchurl?: string,
     command: CommandNames
-};
+|};
 
-export type AllCommandsType = { [CommandNames]: CommandType };
+export type ColumnDataTableType = {| 
+    data: string, 
+    title: string 
+|};
 
-export type ColumnDataTableType = {data: $Keys<CommandDataTableType>, title: string};
-
-export const COMMANDS: AllCommandsType = {
+export const COMMANDS: { [CommandNames]: CommandType } = {
     fb: {
         name: "Facebook",
         url: "https://facebook.com/",
@@ -30,6 +30,11 @@ export const COMMANDS: AllCommandsType = {
         name: "Gmail",
         url: "https://mail.google.com/mail/u/0",
         searchurl: "https://mail.google.com/mail/u/"
+    },
+    gd: {
+        name: "Google Drive",
+        url: "https://drive.google.com/drive/u/0",
+        searchurl: "https://drive.google.com/drive/u/"
     },
     sis: {
         name: "UVA SIS",
@@ -104,6 +109,10 @@ export const COMMANDS: AllCommandsType = {
     cnn: {
         name: "CNN",
         url: "https://www.cnn.com/"
+    },
+    tr: {
+        name: "HooHacks Trello Board",
+        url: "https://trello.com/b/GjKhtVPK/hoohacks"
     },
     DEFAULT: {
         name: "Default - Google Search",

@@ -1,6 +1,6 @@
 // @flow
 
-import type {CommandType, CommandNames, CommandDataTableType, AllCommandsType, ColumnDataTableType} from './commands.js';
+import type {CommandType, CommandDataTableType, ColumnDataTableType} from './commands.js';
 import {COMMANDS} from './commands.js';
 
 const bunnylol: string => Promise<boolean> = async function (currCmd: string){
@@ -41,7 +41,7 @@ if (currCmd === "help" || currCmd.length === 0){
         {data: 'url', title: "URL"}, 
     ];
     // $FlowFixMe - jQuery import
-    $(document).ready( function () {
+    $(document).ready(function() {
         $('#help-table').DataTable({
             data: data,
             columns: columns,
