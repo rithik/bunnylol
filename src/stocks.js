@@ -43,10 +43,12 @@ const viewStockChart: Tickers => Promise<void> = async function(ticker: Tickers)
     Plotly.newPlot(chartElement, data);  
 }
 
-export default async function(){
+const viewStockDashboard: () => Promise<void> = async function(){
     viewStockChart("BA");
     viewStockChart("FB");
     viewStockChart("GOOG");
     viewStockChart("AAPL");
     viewStockChart("AMZN");
 }
+
+export default viewStockDashboard;

@@ -32,16 +32,18 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
 
 const currCmd: string = new URL(window.location.href).searchParams.get("search") ?? "help";
 
-if (currCmd === "help" || currCmd.length === 0){
-    viewHelpPage();
-}
-else if (currCmd === "$" || currCmd === "stocks"){
-    viewStockDashboard();
-}
-else{
-    bunnylol(currCmd).then((done: boolean) => {
-        if (!done && COMMANDS.DEFAULT.searchurl){
-            redirect(`${COMMANDS.DEFAULT.searchurl}${currCmd}`);
-        }
-    }).catch((reject: string) => {console.log(reject);});
+switch(currCmd){
+    case "help" || "": 
+        viewHelpPage();
+        break;
+    case "$" || "stocks": 
+        viewStockDashboard();
+        break;
+    default: 
+        bunnylol(currCmd).then((done: boolean) => {
+            if (!done && COMMANDS.DEFAULT.searchurl){
+                redirect(`${COMMANDS.DEFAULT.searchurl}${currCmd}`);
+            }
+        }).catch((reject: string) => {console.log(reject);});
+        break;
 }

@@ -3,7 +3,7 @@
 import type {CommandNames, CommandDataTableType, ColumnDataTableType} from './commands.js';
 import COMMANDS from './commands.js';
 
-export default function(){
+const viewHelpPage: () => void = function(){
     const data: Array<CommandDataTableType> = Object.keys(COMMANDS).map((command: CommandNames) => {
         const cmdData = COMMANDS[command];
         return {
@@ -25,3 +25,5 @@ export default function(){
         paging: false
     });
 }
+
+export default viewHelpPage; 

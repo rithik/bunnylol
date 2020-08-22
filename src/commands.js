@@ -6,8 +6,8 @@ export type CommandType = {|
     searchurl?: string,
 |};
 
-export type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' |
-                    'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+export type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'n' |
+                            'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
     name: string, 
@@ -20,7 +20,7 @@ export type ColumnDataTableType = {|
     title: string 
 |};
 
-export default {
+const COMMANDS: {[CommandNames] : CommandType}= {
     fb: {
         name: "Facebook",
         url: "https://facebook.com/",
@@ -114,9 +114,25 @@ export default {
         name: "HooHacks Trello Board",
         url: "https://trello.com/b/GjKhtVPK/hoohacks"
     },
+    n: {
+        name: "Netflix",
+        url: "https://netflix.com/",
+        searchurl: "https://www.netflix.com/search?q="
+    },
+    h: {
+        name: "Hulu",
+        url: "https://hulu.com/",
+    },
+    pv: {
+        name: "Amazon Prime Video",
+        url: "https://www.amazon.com/Amazon-Video/b/?&node=2858778011&ref=dvm_MLP_ROWNA_US_1",
+        searchurl: "https://www.amazon.com/s?i=instant-video&ref=nb_sb_noss_2&k="
+    },
     DEFAULT: {
         name: "Default - Google Search",
         url: "https://google.com/",
         searchurl: "https://www.google.com/search?q="
     }
 };
+
+export default COMMANDS;
