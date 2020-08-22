@@ -20,7 +20,7 @@ export type ColumnDataTableType = {|
     title: string 
 |};
 
-export const COMMANDS: { [CommandNames]: CommandType } = {
+export default {
     fb: {
         name: "Facebook",
         url: "https://facebook.com/",

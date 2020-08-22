@@ -1,7 +1,8 @@
 // @flow strict
 
 import type {CommandType, CommandNames, CommandDataTableType, ColumnDataTableType} from './commands.js';
-import {COMMANDS} from './commands.js';
+import COMMANDS from './commands.js';
+import viewStockChart from './stocks.js';
 
 const redirect: string => Promise<void> = async function(url: string){
     await window.location.replace(url);
@@ -51,6 +52,13 @@ if (currCmd === "help" || currCmd.length === 0){
         order: [[ 1, "asc" ]],
         paging: false
     });
+}
+else if (currCmd === "$" || currCmd === "stocks"){
+    viewStockChart("BA");
+    viewStockChart("FB");
+    viewStockChart("GOOG");
+    viewStockChart("AAPL");
+    viewStockChart("AMZN");
 }
 else{
     bunnylol(currCmd).then((done: boolean) => {
