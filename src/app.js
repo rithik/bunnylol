@@ -1,8 +1,9 @@
 // @flow strict
 
-import type {CommandType, CommandNames, CommandDataTableType, ColumnDataTableType} from './commands.js';
+import type {CommandType} from './commands.js';
 import COMMANDS from './commands.js';
-import viewStockChart from './stocks.js';
+import viewStockDashboard from './stocks.js';
+import viewHelpPage from './help.js';
 
 const redirect: string => Promise<void> = async function(url: string){
     await window.location.replace(url);
@@ -32,33 +33,10 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
 const currCmd: string = new URL(window.location.href).searchParams.get("search") ?? "help";
 
 if (currCmd === "help" || currCmd.length === 0){
-    const data: Array<CommandDataTableType> = Object.keys(COMMANDS).map((command: CommandNames) => {
-        const cmdData = COMMANDS[command];
-        return {
-            name: cmdData.name, 
-            url: cmdData.url, 
-            command: command
-        };
-    });
-    const columns: Array<ColumnDataTableType> = [
-        {data: 'command', title: "Command"}, 
-        {data: 'name', title: "Name"}, 
-        {data: 'url', title: "URL"}, 
-    ];
-    // $FlowFixMe - jQuery import
-    $('#help-table').DataTable({
-        data: data,
-        columns: columns,
-        order: [[ 1, "asc" ]],
-        paging: false
-    });
+    viewHelpPage();
 }
 else if (currCmd === "$" || currCmd === "stocks"){
-    viewStockChart("BA");
-    viewStockChart("FB");
-    viewStockChart("GOOG");
-    viewStockChart("AAPL");
-    viewStockChart("AMZN");
+    viewStockDashboard();
 }
 else{
     bunnylol(currCmd).then((done: boolean) => {

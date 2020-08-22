@@ -2,7 +2,7 @@
 
 type Tickers = 'FB' | 'BA' | 'GOOG' | 'AAPL' | 'AMZN';
 
-export default async function viewStockChart(ticker: Tickers){
+const viewStockChart: Tickers => Promise<void> = async function(ticker: Tickers){
     const parentElement: ?HTMLElement = document.getElementById("stocks");
 
     if (!parentElement){
@@ -41,4 +41,12 @@ export default async function viewStockChart(ticker: Tickers){
 
     // $FlowFixMe - Plotly will be loaded already
     Plotly.newPlot(chartElement, data);  
+}
+
+export default async function(){
+    viewStockChart("BA");
+    viewStockChart("FB");
+    viewStockChart("GOOG");
+    viewStockChart("AAPL");
+    viewStockChart("AMZN");
 }
