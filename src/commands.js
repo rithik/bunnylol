@@ -6,8 +6,8 @@ export type CommandType = {|
     searchurl?: string,
 |};
 
-export type CommandNames = 'fb' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'n' |
-                            'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 
+                            'p' | 'n' | 'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
     name: string, 
@@ -25,6 +25,22 @@ const COMMANDS: {[CommandNames] : CommandType}= {
         name: "Facebook",
         url: "https://facebook.com/",
         searchurl: "https://www.facebook.com/search/top/?q="
+    },
+    m: {
+        name: "Messenger Desktop App",
+        url: "messenger://"
+    },
+    mw: {
+        name: "Messenger Web",
+        url: "https://www.messenger.com/"
+    },
+    wa: {
+        name: "WhatsApp Desktop App",
+        url: "whatsapp://"
+    },
+    waw: {
+        name: "WhatsApp Web",
+        url: "https://web.whatsapp.com/"
     },
     gm: {
         name: "Gmail",
@@ -127,6 +143,10 @@ const COMMANDS: {[CommandNames] : CommandType}= {
         name: "Amazon Prime Video",
         url: "https://www.amazon.com/Amazon-Video/b/?&node=2858778011&ref=dvm_MLP_ROWNA_US_1",
         searchurl: "https://www.amazon.com/s?i=instant-video&ref=nb_sb_noss_2&k="
+    },
+    p: {
+        name: "Piazza",
+        url: "https://piazza.com/class"
     },
     DEFAULT: {
         name: "Default - Google Search",
