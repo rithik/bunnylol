@@ -4,6 +4,7 @@ export type CommandType = {|
     name: string, 
     url: string, 
     searchurl?: string,
+    isapp?: boolean
 |};
 
 export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 
@@ -28,7 +29,8 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     },
     m: {
         name: "Messenger Desktop App",
-        url: "messenger://"
+        url: "messenger://",
+        isapp: true
     },
     mw: {
         name: "Messenger Web",
@@ -36,7 +38,8 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     },
     wa: {
         name: "WhatsApp Desktop App",
-        url: "whatsapp://"
+        url: "whatsapp://",
+        isapp: true
     },
     waw: {
         name: "WhatsApp Web",

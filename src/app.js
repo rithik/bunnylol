@@ -16,6 +16,9 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
         if (prefix in COMMANDS){
             // $FlowFixMe - this is actually correct since the prefix is a key.
             const command: CommandType = COMMANDS[prefix];
+            if(command.isapp){
+                viewHelpPage();
+            }
             if (command.searchurl && arr.length !== 1){
                 const [, ...query] = arr;
                 await redirect(`${command.searchurl + query.join("+")}`);
