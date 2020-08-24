@@ -4,7 +4,6 @@ export type CommandType = {|
     name: string, 
     url: string, 
     searchurl?: string,
-    isapp?: boolean
 |};
 
 export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | 
@@ -30,7 +29,6 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     m: {
         name: "Messenger Desktop App",
         url: "messenger://",
-        isapp: true
     },
     mw: {
         name: "Messenger Web",
@@ -39,7 +37,6 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     wa: {
         name: "WhatsApp Desktop App",
         url: "whatsapp://",
-        isapp: true
     },
     waw: {
         name: "WhatsApp Web",
@@ -98,7 +95,7 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     },
     db: {
         name: "CS 4750: Database Systems",
-        url: "http://www.cs.virginia.edu/~up3f/cs4750/schedule.html",
+        url: "https://www.cs.virginia.edu/~up3f/cs4750/schedule.html",
     },
     cloud: {
         name: "CS 4740: Cloud Computing",
@@ -154,7 +151,6 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     vs: {
         name: "VS Code",
         url: "vscode://",
-        isapp: true
     },
     wf: {
         name: "Webflow",
