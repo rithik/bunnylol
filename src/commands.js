@@ -6,7 +6,7 @@ export type CommandType = {|
     searchurl?: string,
 |};
 
-export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | 
+export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | '$' |
                            'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
@@ -159,6 +159,11 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     hs: {
         name: "Hubspot",
         url: "https://app.hubspot.com/live-messages/"
+    },
+    $: {
+        name: "Robinhood",
+        url: "https://robinhood.com/", 
+        searchurl: "https://robinhood.com/stocks/"
     },
     DEFAULT: {
         name: "Default - Google Search",

@@ -1,5 +1,7 @@
 // @flow
 
+// This doesn't work as well as I had initially thought. The data here doesn't refresh throughout the day. For now, we'll redirect to Robinhood instead.
+
 type Tickers = 'FB' | 'BA' | 'GOOG' | 'AAPL' | 'AMZN';
 
 const viewStockChart: Tickers => Promise<void> = async function(ticker: Tickers){

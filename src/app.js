@@ -40,9 +40,6 @@ switch(currCmd){
     case "help" || "": 
         viewHelpPage();
         break;
-    case "$" || "stocks": 
-        viewStockDashboard();
-        break;
     default: 
         bunnylol(currCmd).then((done: boolean) => {
             if (!done && COMMANDS.DEFAULT.searchurl){
