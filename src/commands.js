@@ -7,8 +7,8 @@ export type CommandType = {|
     isapp?: boolean
 |};
 
-export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 
-                            'p' | 'n' | 'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | 
+                           'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
     name: string, 
@@ -150,6 +150,19 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     p: {
         name: "Piazza",
         url: "https://piazza.com/class"
+    },
+    vs: {
+        name: "VS Code",
+        url: "vscode://",
+        isapp: true
+    },
+    wf: {
+        name: "Webflow",
+        url: "https://webflow.com/design/hoohacks"
+    },
+    hs: {
+        name: "Hubspot",
+        url: "https://app.hubspot.com/live-messages/"
     },
     DEFAULT: {
         name: "Default - Google Search",
