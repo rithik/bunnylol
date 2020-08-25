@@ -7,7 +7,7 @@ export type CommandType = {|
 |};
 
 export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | '$' |
-                           'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+                           'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'mobile' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
     name: string, 
@@ -100,6 +100,10 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     cloud: {
         name: "CS 4740: Cloud Computing",
         url: "https://nmagee.github.io/cs4740/schedule/",
+    },
+    mobile: {
+        name: "CS 4720: Mobile App Development",
+        url: "https://mobileappdev.teachable.com/courses"
     },
     priv: {
         name: "CS 4501: Privacy in the Internet Age",
