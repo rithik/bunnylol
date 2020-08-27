@@ -7,7 +7,8 @@ export type CommandType = {|
 |};
 
 export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | '$' |
-                           'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'mobile' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+                           'cal' | 'covid' |'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'mobile' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 
+                           'DEFAULT';
 
 export type CommandDataTableType = {|
     name: string, 
@@ -168,6 +169,14 @@ const COMMANDS: {[CommandNames] : CommandType}= {
         name: "Robinhood",
         url: "https://robinhood.com/", 
         searchurl: "https://robinhood.com/stocks/"
+    },
+    cal: {
+        name: "Google Calendar",
+        url: "https://calendar.google.com/calendar/r"
+    },
+    covid: {
+        name: "UVA COVID-19 Tracker",
+        url: "https://returntogrounds.virginia.edu/covid-tracker"
     },
     DEFAULT: {
         name: "Default - Google Search",
