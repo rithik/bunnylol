@@ -25,9 +25,11 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
                 const classData = CLASSES[prefix]; 
                 if (arr[1].toLowerCase() === "j" && classData.url){
                     await redirect(`${classData.url}`);
+                    return true;
                 }
                 if (arr[1].toLowerCase() === "d" && classData.discussionurl){
                     await redirect(`${classData.discussionurl}`);
+                    return true;
                 }
             }
             if(protocol !== "https:" && protocol !== "http:"){
