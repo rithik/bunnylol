@@ -23,7 +23,7 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
             if (prefix in CLASSES){
                 // $FlowFixMe - this is actually correct since the prefix is a key.
                 const classData = CLASSES[prefix]; 
-                if (arr.length > 0){
+                if (arr.length > 1){
                     if (arr[1].toLowerCase() === "j" && classData.url){
                         await redirect(`${classData.url}`);
                         return true;
