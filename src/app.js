@@ -23,13 +23,15 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
             if (prefix in CLASSES){
                 // $FlowFixMe - this is actually correct since the prefix is a key.
                 const classData = CLASSES[prefix]; 
-                if (arr[1].toLowerCase() === "j" && classData.url){
-                    await redirect(`${classData.url}`);
-                    return true;
-                }
-                if (arr[1].toLowerCase() === "d" && classData.discussionurl){
-                    await redirect(`${classData.discussionurl}`);
-                    return true;
+                if (arr.length > 0){
+                    if (arr[1].toLowerCase() === "j" && classData.url){
+                        await redirect(`${classData.url}`);
+                        return true;
+                    }
+                    if (arr[1].toLowerCase() === "d" && classData.discussionurl){
+                        await redirect(`${classData.discussionurl}`);
+                        return true;
+                    }
                 }
             }
             if(protocol !== "https:" && protocol !== "http:"){
