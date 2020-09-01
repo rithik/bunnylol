@@ -31,11 +31,9 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
                     await redirect(`${classData.collaburl}`);
                     return true;
                 }
-                else{
-                    await redirect(`${classData.url}`);
-                    return true;
-                }
             }
+            await redirect(`${classData.url}`);
+            return true;
         }
         if (prefix in COMMANDS){
             // $FlowFixMe - this is actually correct since the prefix is a key.
