@@ -7,8 +7,7 @@ export type CommandType = {|
 |};
 
 export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | '$' |
-                           'cal' | 'covid' |'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'db' | 'cloud' | 'mobile' | 'priv' | 'ml' | 'wp' | 'wsj' | 'cnn' | 'g' | 
-                           'DEFAULT';
+                           'cal' | 'covid' |'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
     name: string, 
@@ -93,26 +92,6 @@ const COMMANDS: {[CommandNames] : CommandType}= {
     me: {
         name: "Rithik.me - Personal Website",
         url: "https://rithik.me/me",
-    },
-    db: {
-        name: "CS 4750: Database Systems",
-        url: "https://www.cs.virginia.edu/~up3f/cs4750/schedule.html",
-    },
-    cloud: {
-        name: "CS 4740: Cloud Computing",
-        url: "https://nmagee.github.io/cs4740/schedule/",
-    },
-    mobile: {
-        name: "CS 4720: Mobile App Development",
-        url: "https://mobileappdev.teachable.com/courses"
-    },
-    priv: {
-        name: "CS 4501: Privacy in the Internet Age",
-        url: "https://www.cs.virginia.edu/~ys3kz/courses/fall20/cs4501/",
-    },
-    ml: {
-        name: "CS 4774: Machine Learning",
-        url: "https://qiyanjun.github.io/2020f-UVA-CS-MachineLearningDeep/",
     },
     g: {
         name: "Google",
