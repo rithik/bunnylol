@@ -57,7 +57,8 @@ const CLASSES: {[ClassCommands]: ClassType } = {
     },
     bus: {
         name: "STS 4810: New Product Development",
-        url: "https://collab.its.virginia.edu/portal/site/63ca844a-473b-4fd9-80e8-417943b0c335"
+        url: "https://collab.its.virginia.edu/portal/site/63ca844a-473b-4fd9-80e8-417943b0c335", 
+        zoomurl: "https://virginia.zoom.us/j/94123273294?pwd=cnVUaHdRN1B6NVMzOHhsZlhkNDBOdz09"
     }
 }
 
