@@ -50,7 +50,7 @@ const CLASSES: {[ClassCommands]: ClassType } = {
         collaburl: "https://collab.its.virginia.edu/portal/site/27a3a9f2-00f9-45db-a2ed-6e99e9415ea1",
     },
     cloud: {
-        name: "CS 4720: Cloud Computing",
+        name: "CS 4740: Cloud Computing",
         discussionurl: "discord://", 
         url: "https://nmagee.github.io/cs4740/schedule/", 
         collaburl: "https://collab.its.virginia.edu/portal/site/4721482a-fa9b-45af-a68c-ee47e0e0e89d"
