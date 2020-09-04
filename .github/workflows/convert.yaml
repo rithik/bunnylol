@@ -1,0 +1,26 @@
+name: Convert BunnyLOL JavaScript files for Browser
+on: [push]
+
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@master
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+      - name: Convert from Flow to Browser JS, bundle and minify files
+        run: |
+          git checkout web
+          npm install
+          npm run build 
+          rollup compiled/app.js -o bundle.js -f cjs --compact 
+          minify --mangle bundle.js -o main.js 
+          rm -r compiled/ bundle.js
+      - name: Push changes to web
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Build for Web" -a
+          git push origin web
+      
