@@ -20,7 +20,7 @@ export type ColumnDataTableType = {|
     title: string 
 |};
 
-const COMMANDS: {[CommandNames] : CommandType}= {
+export const COMMANDS: {[CommandNames] : CommandType} = {
     fb: {
         name: "Facebook",
         url: "https://facebook.com/",
@@ -163,5 +163,3 @@ const COMMANDS: {[CommandNames] : CommandType}= {
         searchurl: "https://www.google.com/search?q="
     }
 };
-
-export default COMMANDS;

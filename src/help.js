@@ -3,10 +3,10 @@
 import type {CommandNames, CommandDataTableType, ColumnDataTableType} from './commands.js';
 import type {ClassCommands, JoinOrDiscussType, ClassType} from './classes.js';
 
-import COMMANDS from './commands.js';
-import CLASSES from './classes.js';
+import {COMMANDS} from './commands.js';
+import {CLASSES} from './classes.js';
 
-const viewHelpPage: () => void = function(){
+export const viewHelpPage: () => void = function(){
     const data: Array<CommandDataTableType> = Object.keys(COMMANDS).map((command: CommandNames) => {
         const cmdData = COMMANDS[command];
         return {
@@ -51,5 +51,3 @@ const viewHelpPage: () => void = function(){
         paging: false
     });
 }
-
-export default viewHelpPage; 

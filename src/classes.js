@@ -12,7 +12,7 @@ export type ClassCommands = "priv" | "sts" | "startup" | "ml" | "db" | "cloud" |
 
 export type JoinOrDiscussType = "j" | "d" | "c"; // j = join; d = discussion; c = UVA Collab; default to url
 
-const CLASSES: {[ClassCommands]: ClassType } = {
+export const CLASSES: {[ClassCommands]: ClassType } = {
     priv: {
         name: "CS 4501: Privacy in the Internet Age",
         zoomurl: "https://virginia.zoom.us/j/96274680764?pwd=eXFBcFViZUVkMUJQQitobG5EQ3BXdz09",
@@ -61,5 +61,3 @@ const CLASSES: {[ClassCommands]: ClassType } = {
         zoomurl: "https://virginia.zoom.us/j/94123273294?pwd=cnVUaHdRN1B6NVMzOHhsZlhkNDBOdz09"
     }
 }
-
-export default CLASSES;

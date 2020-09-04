@@ -3,9 +3,9 @@
 import type {CommandType} from './commands.js';
 import type {ClassCommands, JoinOrDiscussType, ClassType} from './classes.js';
 
-import COMMANDS from './commands.js';
-import CLASSES from './classes.js';
-import viewHelpPage from './help.js';
+import {COMMANDS} from './commands.js';
+import {CLASSES} from './classes.js';
+import {viewHelpPage} from './help.js';
 
 const redirect: string => Promise<void> = async function(url: string){
     await window.location.replace(url);

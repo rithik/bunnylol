@@ -4,7 +4,7 @@
 
 type Tickers = 'FB' | 'BA' | 'GOOG' | 'AAPL' | 'AMZN';
 
-const viewStockChart: Tickers => Promise<void> = async function(ticker: Tickers){
+export const viewStockChart: Tickers => Promise<void> = async function(ticker: Tickers){
     const parentElement: ?HTMLElement = document.getElementById("stocks");
 
     if (!parentElement){
@@ -52,5 +52,3 @@ const viewStockDashboard: () => Promise<void> = async function(){
     viewStockChart("AAPL");
     viewStockChart("AMZN");
 }
-
-export default viewStockDashboard;
