@@ -20,7 +20,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add main.js
+          git add .
           git commit -m "Build for Web" -a
           git push origin web
       
