@@ -16,11 +16,13 @@ jobs:
           npm run bundle
           npm run minify
           echo "Minified files"
-      - name: Push changes to web
+      - name: Commit changes to web
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "Build for Web" -a
-          git push origin web
-      
+      - name: Push changes
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.PUSH_TOKEN }}
