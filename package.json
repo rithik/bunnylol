@@ -3,7 +3,8 @@
   "main": "main.js",
   "scripts": {
     "build": "babel src/ -d compiled/",
-    "ready": "npm run build && rollup compiled/app.js -o bundle.js -f cjs --compact && minify --mangle bundle.js -o main.js && echo 'Minified Files'",
+    "bundle": "rollup compiled/app.js -o bundle.js -f cjs --compact",
+    "minify": "minify --mangle bundle.js -o main.js",
     "flow": "flow"
   },
   "devDependencies": {
