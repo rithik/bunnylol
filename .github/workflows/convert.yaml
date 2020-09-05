@@ -23,6 +23,6 @@ jobs:
           git add .
           git commit -m "Build for Web" -a
       - name: Push changes
-          uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.PUSH_TOKEN }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PUSH_TOKEN }}
