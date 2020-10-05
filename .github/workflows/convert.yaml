@@ -26,9 +26,9 @@ jobs:
       #     git add main.js
       #     git commit -m "Build for publishing" -a
       - name: Deploy
-        uses: s0/git-publish-subdir-action@develop
+        uses: Automattic/action-commit-to-branch@master
+        with:
+          branch: 'master-built'
+          commit_message: 'Build master'
         env:
-          REPO: self
-          BRANCH: web-public
-          FOLDER: dist
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
