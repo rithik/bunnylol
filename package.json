@@ -4,7 +4,7 @@
   "scripts": {
     "build": "babel src/ -d compiled/",
     "bundle": "rollup compiled/app.js -o bundle.js -f cjs --compact",
-    "minify": "minify --mangle bundle.js -o dist/main.js",
+    "minify": "minify --mangle bundle.js -o main.js",
     "flow": "flow"
   },
   "devDependencies": {
