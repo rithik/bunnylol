@@ -19,38 +19,10 @@ jobs:
           npm run bundle
           npm run minify
           echo "Minified files"
-      # - name: Commit changes to web
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add .
-      #     git commit -m "Build for publishing" -a
-      # - name: Deploy
-      #   uses: Automattic/action-commit-to-branch@master
-      #   with:
-      #     branch: 'web-build'
-      #     commit_message: 'Build master'
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          # Required
-          commit_message: Apply automatic changes
-
-          # Optional branch to push to, defaults to the current branch
-          branch: master-built
-
-          commit_options: '--no-verify --signoff'
-
-          repository: .
-
-          commit_user_name: GitHub Actions
-          commit_user_email: action@github.com
-          commit_author: GitHub Actions <actions@github.com>
-
-          # Optional options appended to `git-push`
-          # See git-push documentation for details: https://git-scm.com/docs/git-push#_options
-          push_options: '--force'
-          
-          # Optional: Disable dirty check and always try to create a commit and push
-          skip_dirty_check: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: dist # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
