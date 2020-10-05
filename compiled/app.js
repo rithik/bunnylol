@@ -26,6 +26,9 @@ const bunnylol = async function (currCmd) {
         } else if (arr[1].toLowerCase() === "c" && classData.collaburl) {
           await redirect(`${classData.collaburl}`);
           return true;
+        } else if (arr[1].toLowerCase() === "s" && classData.specialurl) {
+          await redirect(`${classData.specialurl}`);
+          return true;
         }
       }
 
