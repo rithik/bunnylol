@@ -1,5 +1,8 @@
 name: Convert BunnyLOL JavaScript files for Browser
-on: [pull_request]
+on:
+  push:
+    branches:
+        - master
 
 jobs:
     build:
@@ -16,13 +19,15 @@ jobs:
           npm run bundle
           npm run minify
           echo "Minified files"
-      - name: Commit changes to web
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Build for Web" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PUSH_TOKEN }}
+      # - name: Commit changes to web
+      #   run: |
+      #     git config --local user.email "action@github.com"
+      #     git config --local user.name "GitHub Action"
+      #     git add main.js
+      #     git commit -m "Build for publishing" -a
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: web-public
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
