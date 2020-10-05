@@ -38,7 +38,7 @@ jobs:
           commit_message: Apply automatic changes
 
           # Optional branch to push to, defaults to the current branch
-          branch: web-build
+          branch: master-built
 
           commit_options: '--no-verify --signoff'
 
