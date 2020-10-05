@@ -19,12 +19,12 @@ jobs:
           npm run bundle
           npm run minify
           echo "Minified files"
-      # - name: Commit changes to web
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add main.js
-      #     git commit -m "Build for publishing" -a
+      - name: Commit changes to web
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Build for publishing" -a
       - name: Deploy
         uses: Automattic/action-commit-to-branch@master
         with:
