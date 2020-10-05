@@ -1,0 +1,20 @@
+{
+  "name": "rithik-bunnylol",
+  "main": "main.js",
+  "scripts": {
+    "build": "babel src/ -d compiled/",
+    "bundle": "rollup compiled/app.js -o bundle.js -f cjs --compact",
+    "minify": "minify --mangle bundle.js -o main.js",
+    "flow": "flow"
+  },
+  "devDependencies": {
+    "babel-minify": "^0.5.1",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-flow": "^7.10.4",
+    "express": "^4.17.1",
+    "flow-bin": "^0.132.0",
+    "rollup": "^2.26.10",
+    "rollup-plugin-terser": "^5.3.1"
+  }
+}

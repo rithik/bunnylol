@@ -1,0 +1,5 @@
+node_modules/
+.vscode/
+commandTable.js
+bundle.js
+compiled/
