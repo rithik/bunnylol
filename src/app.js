@@ -31,6 +31,10 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
                     await redirect(`${classData.collaburl}`);
                     return true;
                 }
+                else if (arr[1].toLowerCase() === "s" && classData.specialurl){
+                    await redirect(`${classData.specialurl}`);
+                    return true;
+                }
             }
             await redirect(`${classData.url}`);
             return true;

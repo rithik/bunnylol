@@ -5,12 +5,13 @@ export type ClassType = {|
     url: string,
     zoomurl?: string,
     discussionurl?: string,
-    collaburl?: string
+    collaburl?: string,
+    specialurl?: string,
 |};
 
 export type ClassCommands = "priv" | "sts" | "startup" | "ml" | "db" | "cloud" | "mobile" | "bus";
 
-export type JoinOrDiscussType = "j" | "d" | "c"; // j = join; d = discussion; c = UVA Collab; default to url
+export type JoinOrDiscussType = "j" | "d" | "c" | "s"; // j = join; d = discussion; c = UVA Collab; default to url; s = special
 
 export const CLASSES: {[ClassCommands]: ClassType } = {
     priv: {
@@ -48,6 +49,7 @@ export const CLASSES: {[ClassCommands]: ClassType } = {
         zoomurl: "https://virginia.zoom.us/j/92678230496?pwd=VVNqdHk3TVF0YndRNFFlbW9PR0pyZz09",
         discussionurl: "https://piazza.com/class/kdkzzs4q102d3",
         collaburl: "https://collab.its.virginia.edu/portal/site/27a3a9f2-00f9-45db-a2ed-6e99e9415ea1",
+        specialurl: "http://usersrv01.cs.virginia.edu/phpmyadmin/index.php"
     },
     cloud: {
         name: "CS 4740: Cloud Computing",
