@@ -47,8 +47,7 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
                 viewHelpPage();
             }
             if (command.searchurl && arr.length !== 1){
-                const [, ...query] = arr;
-                await redirect(`${command.searchurl + query.join("+")}`);
+                await redirect(`${command.searchurl}${encodeURIComponent(currCmd.substr(prefix.length + 1))}`);
                 return true;
             }
             else {
@@ -69,7 +68,7 @@ switch(currCmd){
     default: 
         bunnylol(currCmd).then((done: boolean) => {
             if (!done && COMMANDS.DEFAULT.searchurl){
-                redirect(`${COMMANDS.DEFAULT.searchurl}${currCmd}`);
+                redirect(`${COMMANDS.DEFAULT.searchurl}${encodeURIComponent(currCmd)}`);
             }
         }).catch((reject: string) => {console.log(reject);});
         break;
