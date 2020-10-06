@@ -37,7 +37,7 @@ export const CLASSES: {[ClassCommands]: ClassType } = {
         url: "https://mobileappdev.teachable.com/courses"
     },
     ml: {
-        name: "CS 4557: Machine Learning",
+        name: "CS 4774: Machine Learning",
         zoomurl: "https://virginia.zoom.us/j/97039189577?pwd=WUpLYTVhVGt2LzNDemdmNUxINXNEUT09",
         discussionurl: "slack://2020fuvacsmac-93g9279", 
         url: "https://qiyanjun.github.io/2020f-UVA-CS-MachineLearningDeep/",
