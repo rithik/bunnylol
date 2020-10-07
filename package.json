@@ -14,6 +14,7 @@
     "babel-minify": "^0.5.1",
     "express": "^4.17.1",
     "flow-bin": "^0.132.0",
+    "jquery": "^3.5.1",
     "rollup": "^2.26.10",
     "rollup-plugin-terser": "^5.3.1"
   }
