@@ -6,8 +6,6 @@ import type {ClassCommands, JoinOrDiscussType, ClassType} from './classes.js';
 import {COMMANDS} from './commands.js';
 import {CLASSES} from './classes.js';
 
-import $ from "jquery";
-
 export const viewHelpPage: () => void = function(){
     const data: Array<CommandDataTableType> = Object.keys(COMMANDS).map((command: CommandNames) => {
         const cmdData = COMMANDS[command];
@@ -22,6 +20,7 @@ export const viewHelpPage: () => void = function(){
         {data: 'name', title: "Name"}, 
         {data: 'url', title: "URL"}, 
     ];
+    // $FlowFixMe - jQuery import
     $('#help-table').DataTable({
         data: data,
         columns: columns,
@@ -44,6 +43,7 @@ export const viewHelpPage: () => void = function(){
         {data: 'name', title: "Name"}, 
         {data: 'url', title: "URL"}, 
     ];
+    // $FlowFixMe - jQuery import
     $('#classes-table').DataTable({
         data: classesData,
         columns: classColumns,
