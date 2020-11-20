@@ -142,7 +142,7 @@ export const COMMANDS: {[CommandNames] : CommandType} = {
     },
     hs: {
         name: "Hubspot",
-        url: "https://app.hubspot.com/live-messages/"
+        url: "https://app.hubspot.com/"
     },
     $: {
         name: "Robinhood",
