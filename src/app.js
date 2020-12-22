@@ -14,13 +14,16 @@ const redirect: string => Promise<void> = async function(url: string){
 const bunnylol: string => Promise<boolean> = async function (currCmd: string){
     let arr: Array<string> = [];
     if (currCmd.startsWith("$")){
-        arr = currCmd.split(/[ $]/g);
+        arr = currCmd.split(/[ $+]/g);
         arr[0] = "$";
+        if (arr[1] === ""){
+            arr = ["$"]
+        }
     }
     else{
-        // $FlowFixMe - this is actually correct since the prefix is a key.
         arr = currCmd.split(/[ +]/g);
     }
+    console.log(arr);
     if (arr.length > 0){
         const prefix: string = arr[0].toLowerCase();
         if (prefix in CLASSES){
@@ -55,8 +58,9 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
                 viewHelpPage();
             }
             if (command.searchurl && arr.length !== 1){
-                const searchParam = command.name === "$" ? prefix.length + 1 : prefix.length;
-                await redirect(`${command.searchurl}${encodeURIComponent(currCmd.substr(searchParam))}`);
+                const searchParam = command.name !== "$" ? prefix.length + 1 : prefix.length;
+                console.log(`${command.searchurl}${encodeURIComponent(currCmd.substr(searchParam))}`);
+                // await redirect(`${command.searchurl}${encodeURIComponent(currCmd.substr(searchParam))}`);
                 return true;
             }
             else {
