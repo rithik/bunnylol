@@ -23,7 +23,6 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
     else{
         arr = currCmd.split(/[ +]/g);
     }
-    console.log(arr);
     if (arr.length > 0){
         const prefix: string = arr[0].toLowerCase();
         if (prefix in CLASSES){
@@ -58,7 +57,7 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
                 viewHelpPage();
             }
             if (command.searchurl && arr.length !== 1){
-                const searchParam = command.name !== "$" ? prefix.length + 1 : prefix.length;
+                const searchParam = prefix !== "$" ? prefix.length + 1 : prefix.length;
                 await redirect(`${command.searchurl}${encodeURIComponent(currCmd.substr(searchParam))}`);
                 return true;
             }
