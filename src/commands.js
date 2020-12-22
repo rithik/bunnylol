@@ -7,7 +7,7 @@ export type CommandType = {|
 |};
 
 export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | '$' |
-                           'cal' | 'covid' |'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+                           'cal' | 'uvacovid' |'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
     name: string, 
@@ -153,7 +153,7 @@ export const COMMANDS: {[CommandNames] : CommandType} = {
         name: "Google Calendar",
         url: "https://calendar.google.com/calendar/r"
     },
-    covid: {
+    uvacovid: {
         name: "UVA COVID-19 Tracker",
         url: "https://returntogrounds.virginia.edu/covid-tracker"
     },
