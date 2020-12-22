@@ -59,8 +59,7 @@ const bunnylol: string => Promise<boolean> = async function (currCmd: string){
             }
             if (command.searchurl && arr.length !== 1){
                 const searchParam = command.name !== "$" ? prefix.length + 1 : prefix.length;
-                console.log(`${command.searchurl}${encodeURIComponent(currCmd.substr(searchParam))}`);
-                // await redirect(`${command.searchurl}${encodeURIComponent(currCmd.substr(searchParam))}`);
+                await redirect(`${command.searchurl}${encodeURIComponent(currCmd.substr(searchParam))}`);
                 return true;
             }
             else {
