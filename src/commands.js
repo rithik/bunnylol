@@ -6,7 +6,7 @@ export type CommandType = {|
     searchurl?: string,
 |};
 
-export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | '$' |
+export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'tv' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | '$' |
                            'cal' | 'uvacovid' |'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
@@ -64,6 +64,10 @@ export const COMMANDS: {[CommandNames] : CommandType} = {
         name: "YouTube",
         url: "https://youtube.com/",
         searchurl: "https://www.youtube.com/results?search_query="
+    },
+    tv: {
+        name: "YouTube TV",
+        url: "https://tv.youtube.com/",
     },
     gh: {
         name: "GitHub",
