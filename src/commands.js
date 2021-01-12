@@ -7,7 +7,7 @@ export type CommandType = {|
 |};
 
 export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'tv' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'wf' | '$' |
-                           'cal' | 'uvacovid' |'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'wp' | 'wsj' | 'cnn' | 'g' | 'DEFAULT';
+                           'cal' | 'uvacovid' |'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'wp' | 'wsj' | 'cnn' | 'wiki' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
     name: string, 
@@ -160,6 +160,11 @@ export const COMMANDS: {[CommandNames] : CommandType} = {
     uvacovid: {
         name: "UVA COVID-19 Tracker",
         url: "https://returntogrounds.virginia.edu/covid-tracker"
+    },
+    wiki: {
+        name: "Wikipedia",
+        url: "https://en.wikipedia.org",
+        searchurl: "https://en.wikipedia.org/wiki/"
     },
     DEFAULT: {
         name: "Default - Google Search",
