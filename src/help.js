@@ -34,7 +34,7 @@ export const viewHelpPage: () => void = function(){
             name: cmdData.name, 
             url: cmdData.url, 
             // $FlowFixMe - this is actually correct.
-            command: command
+            command
         };
     });
 

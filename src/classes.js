@@ -9,57 +9,34 @@ export type ClassType = {|
     specialurl?: string,
 |};
 
-export type ClassCommands = "priv" | "sts" | "startup" | "ml" | "db" | "cloud" | "mobile" | "bus";
+export type ClassCommands = "f1" | "pl" | "cv" | "ece" | "sts" | "apma";
 
 export type JoinOrDiscussType = "j" | "d" | "c" | "s"; // j = join; d = discussion; c = UVA Collab; default to url; s = special
 
 export const CLASSES: {[ClassCommands]: ClassType } = {
-    priv: {
-        name: "CS 4501: Privacy in the Internet Age",
-        zoomurl: "https://virginia.zoom.us/j/96274680764?pwd=eXFBcFViZUVkMUJQQitobG5EQ3BXdz09",
-        discussionurl: "https://piazza.com/class/ke81el8uw9o3ra", 
-        collaburl: "https://collab.its.virginia.edu/portal/site/bbaeb16c-6afb-4835-9b16-92378b639304", 
-        url: "https://www.cs.virginia.edu/~ys3kz/courses/fall20/cs4501/",
+    f1: {
+        name: "CS 4501: F1/10 Autonomous Racing: Perception, Planning, and Control for Autonomous Driving",
+        url: "https://linklab-uva.github.io/autonomousracing/"
+    },
+    pl: {
+        name: "CS 4640: Programming Languages for Web Applications",
+        url: "http://www.cs.virginia.edu/~up3f/cs4640/syllabus.html"
+    },
+    cv: {
+        name: "CS 4501: Introduction to Computer Vision",
+        collaburl: "https://collab.its.virginia.edu/portal/site/a348b7f2-473b-46d4-b348-f189fc4889e3", 
+        url: "https://www.vicenteordonez.com/vision/",
+    },
+    ece: {
+        name: "CS 3501: Embedded Computing & Robotics I",
+        url: "https://collab.its.virginia.edu/portal/site/cdd921f5-3ec5-4de7-9bdc-da5f5a1e92c8"
     },
     sts: {
-        name: "STS 4500: STS and Engineering Practice", 
-        url: "https://collab.its.virginia.edu/portal/site/07e85646-fc70-487b-83e5-65728bf69fcc",
-        zoomurl: "https://virginia.zoom.us/w/92179481987?tk=lb8hbvtc_d9jv-GZ7NDqcyaiY_bVRizjLvKvOCaq7Y4.DQIAAAAVdlNFgxZ0Q095dGdQbVJ3dU00a0d2bTRPOVN3AAAAAAAAAAAAAAAAAAAAAAAAAAAA&pwd=bWJOdUN5eVUxMnlqOEd2RVJ0VmJkUT09",
+        name: "STS 4600: The Engineer, Ethics, and Professional Responsibility", 
+        url: "https://collab.its.virginia.edu/portal/"
     },
-    startup: {
-        name: "STS 2830: Startup Operations for Entrepreneurs",
-        zoomurl: "https://virginia.zoom.us/j/98989659952?pwd=bk9DVE5TR1pZUzNubkk0elBBMDl6QT09",
-        discussionurl: "https://piazza.com/class/ke8p78ntzjt3be", 
-        url: "https://collab.its.virginia.edu/portal/site/87a9eeb6-6e49-4631-bc47-8dbf649e5dd4"
-    },
-    mobile: {
-        name: "CS 4720: Mobile App Development",
-        url: "https://mobileappdev.teachable.com/courses"
-    },
-    ml: {
-        name: "CS 4774: Machine Learning",
-        zoomurl: "https://virginia.zoom.us/j/97039189577?pwd=WUpLYTVhVGt2LzNDemdmNUxINXNEUT09",
-        discussionurl: "slack://2020fuvacsmac-93g9279", 
-        url: "https://qiyanjun.github.io/2020f-UVA-CS-MachineLearningDeep/",
-        collaburl: "https://collab.its.virginia.edu/portal/site/708c9e27-aaab-4acc-ab33-ff493c83527b/"
-    },
-    db: {
-        name: "CS 4750: Database Systems", 
-        url: "https://www.cs.virginia.edu/~up3f/cs4750/schedule.html",
-        zoomurl: "https://virginia.zoom.us/j/92678230496?pwd=VVNqdHk3TVF0YndRNFFlbW9PR0pyZz09",
-        discussionurl: "https://piazza.com/class/kdkzzs4q102d3",
-        collaburl: "https://collab.its.virginia.edu/portal/site/27a3a9f2-00f9-45db-a2ed-6e99e9415ea1",
-        specialurl: "http://usersrv01.cs.virginia.edu/phpmyadmin/index.php"
-    },
-    cloud: {
-        name: "CS 4740: Cloud Computing",
-        discussionurl: "discord://", 
-        url: "https://nmagee.github.io/cs4740/schedule/", 
-        collaburl: "https://collab.its.virginia.edu/portal/site/4721482a-fa9b-45af-a68c-ee47e0e0e89d"
-    },
-    bus: {
-        name: "STS 4810: New Product Development",
-        url: "https://collab.its.virginia.edu/portal/site/63ca844a-473b-4fd9-80e8-417943b0c335", 
-        zoomurl: "https://virginia.zoom.us/j/94123273294?pwd=cnVUaHdRN1B6NVMzOHhsZlhkNDBOdz09"
+    apma: {
+        name: "APMA 2501: Mathematics of Information",
+        url: "http://ips.lab.virginia.edu/mathematics-of-information"
     }
-}
+};
