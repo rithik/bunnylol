@@ -20,7 +20,10 @@ export const CLASSES: {[ClassCommands]: ClassType } = {
     },
     pl: {
         name: "CS 4640: Programming Languages for Web Applications",
-        url: "http://www.cs.virginia.edu/~up3f/cs4640/syllabus.html"
+        url: "https://www.cs.virginia.edu/~up3f/cs4640/schedule.html",
+        collaburl: "https://collab.its.virginia.edu/portal/site/8fff0a03-d2d8-45c8-bda6-760bf8d7e2e4/",
+        discussionurl: "https://piazza.com/class/kkestnq1z5u3kl",
+        zoomurl: "https://virginia.zoom.us/j/95783077722?pwd=U2lLTkN3Y05WWGhJQ051Z3BUWmxvUT09"
     },
     cv: {
         name: "CS 4501: Introduction to Computer Vision",
