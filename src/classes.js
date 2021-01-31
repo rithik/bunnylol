@@ -40,6 +40,7 @@ export const CLASSES: {[ClassCommands]: ClassType } = {
     },
     apma: {
         name: "APMA 2501: Mathematics of Information",
-        url: "http://ips.lab.virginia.edu/mathematics-of-information"
+        url: "http://ips.lab.virginia.edu/mathematics-of-information",
+        collaburl: "https://collab.its.virginia.edu/portal/site/0778b7b4-8cd8-440c-9fcb-bd8e74d5b9f3"
     }
 };
