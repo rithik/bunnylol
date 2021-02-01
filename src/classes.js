@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 export type ClassType = {|
     name: string,
@@ -16,7 +16,8 @@ export type JoinOrDiscussType = "j" | "d" | "c" | "s"; // j = join; d = discussi
 export const CLASSES: {[ClassCommands]: ClassType } = {
     f1: {
         name: "CS 4501: F1/10 Autonomous Racing: Perception, Planning, and Control for Autonomous Driving",
-        url: "https://linklab-uva.github.io/autonomousracing/"
+        url: "https://linklab-uva.github.io/autonomousracing/", 
+        collaburl: "https://collab.its.virginia.edu/portal/site/90579f89-3cbf-4f83-a4d7-902848f7703d"
     },
     pl: {
         name: "CS 4640: Programming Languages for Web Applications",
@@ -36,11 +37,11 @@ export const CLASSES: {[ClassCommands]: ClassType } = {
     },
     sts: {
         name: "STS 4600: The Engineer, Ethics, and Professional Responsibility", 
-        url: "https://collab.its.virginia.edu/portal/"
+        url: "https://collab.its.virginia.edu/portal/site/d360b679-581f-496d-8782-7053d86aefca"
     },
     apma: {
         name: "APMA 2501: Mathematics of Information",
-        url: "http://ips.lab.virginia.edu/mathematics-of-information",
+        url: "http://www.ece.virginia.edu/~ffh8x/moi/",
         collaburl: "https://collab.its.virginia.edu/portal/site/0778b7b4-8cd8-440c-9fcb-bd8e74d5b9f3"
     }
 };
