@@ -1,4 +1,4 @@
-// @flow 
+// @flow strict
 
 import type {CommandNames, CommandDataTableType, ColumnDataTableType} from './commands.js';
 import type {ClassCommands, JoinOrDiscussType, ClassType} from './classes.js';
