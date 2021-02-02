@@ -9,7 +9,7 @@ export type ClassType = {|
     specialurl?: string,
 |};
 
-export type ClassCommands = "f1" | "pl" | "cv" | "ece" | "sts" | "apma";
+export type ClassCommands = "f1" | "pl" | "cv" | "ear" | "sts" | "apma";
 
 export type JoinOrDiscussType = "j" | "d" | "c" | "s"; // j = join; d = discussion; c = UVA Collab; default to url; s = special
 
@@ -31,7 +31,7 @@ export const CLASSES: {[ClassCommands]: ClassType } = {
         collaburl: "https://collab.its.virginia.edu/portal/site/a348b7f2-473b-46d4-b348-f189fc4889e3", 
         url: "https://www.vicenteordonez.com/vision/",
     },
-    ece: {
+    ear: {
         name: "CS 3501: Embedded Computing & Robotics I",
         url: "https://collab.its.virginia.edu/portal/site/cdd921f5-3ec5-4de7-9bdc-da5f5a1e92c8",
         discussionurl: "discord://",
