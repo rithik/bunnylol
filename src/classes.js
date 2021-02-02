@@ -33,15 +33,19 @@ export const CLASSES: {[ClassCommands]: ClassType } = {
     },
     ece: {
         name: "CS 3501: Embedded Computing & Robotics I",
-        url: "https://collab.its.virginia.edu/portal/site/cdd921f5-3ec5-4de7-9bdc-da5f5a1e92c8"
+        url: "https://collab.its.virginia.edu/portal/site/cdd921f5-3ec5-4de7-9bdc-da5f5a1e92c8",
+        discussionurl: "discord://",
+        specialurl: "https://learn.zybooks.com/zybook/VIRGINIACSECE3501Spring2021?selectedPanel=assignments-panel"
     },
     sts: {
         name: "STS 4600: The Engineer, Ethics, and Professional Responsibility", 
-        url: "https://collab.its.virginia.edu/portal/site/d360b679-581f-496d-8782-7053d86aefca"
+        url: "https://collab.its.virginia.edu/portal/site/d360b679-581f-496d-8782-7053d86aefca",
+        zoomurl: "https://virginia.zoom.us/j/93721024007?pwd=T1NJKzdrZG03L2pJN0dEQkcwUC91QT09"
     },
     apma: {
         name: "APMA 2501: Mathematics of Information",
         url: "http://www.ece.virginia.edu/~ffh8x/moi/",
-        collaburl: "https://collab.its.virginia.edu/portal/site/0778b7b4-8cd8-440c-9fcb-bd8e74d5b9f3"
+        collaburl: "https://collab.its.virginia.edu/portal/site/0778b7b4-8cd8-440c-9fcb-bd8e74d5b9f3",
+        discussionurl: "https://piazza.com/class/kknbo8nztqo6vg"
     }
 };
