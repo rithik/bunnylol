@@ -17,7 +17,8 @@ export const CLASSES: {[ClassCommands]: ClassType } = {
     f1: {
         name: "CS 4501: F1/10 Autonomous Racing: Perception, Planning, and Control for Autonomous Driving",
         url: "https://linklab-uva.github.io/autonomousracing/", 
-        collaburl: "https://collab.its.virginia.edu/portal/site/90579f89-3cbf-4f83-a4d7-902848f7703d"
+        collaburl: "https://collab.its.virginia.edu/portal/site/90579f89-3cbf-4f83-a4d7-902848f7703d",
+        discussionurl: "https://piazza.com/class/kko5x3rocvl3ky"
     },
     pl: {
         name: "CS 4640: Programming Languages for Web Applications",
@@ -28,8 +29,9 @@ export const CLASSES: {[ClassCommands]: ClassType } = {
     },
     cv: {
         name: "CS 4501: Introduction to Computer Vision",
-        collaburl: "https://collab.its.virginia.edu/portal/site/a348b7f2-473b-46d4-b348-f189fc4889e3", 
         url: "https://www.vicenteordonez.com/vision/",
+        collaburl: "https://collab.its.virginia.edu/portal/site/a348b7f2-473b-46d4-b348-f189fc4889e3", 
+        zoomurl: "https://virginia.zoom.us/j/99413743466?pwd=VHpmQW9SR1A5bmpseVZMN2tPZVZOdz09"
     },
     ear: {
         name: "CS 3501: Embedded Computing & Robotics I",
