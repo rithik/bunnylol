@@ -7,7 +7,7 @@ export type CommandType = {|
 |};
 
 export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'tv' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 
-                           'wf' | '$' | 'cal' | 'uvacovid' | 'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'wp' | 'wsj' | 'cnn' | 'wiki' | 'g' | 'DEFAULT';
+                           'c' | 'wf' | '$' | 'cal' | 'uvacovid' | 'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'wp' | 'wsj' | 'cnn' | 'wiki' | 'g' | 'DEFAULT';
 
 export type CommandDataTableType = {|
     name: string, 
@@ -152,6 +152,11 @@ export const COMMANDS: {[CommandNames] : CommandType} = {
         name: "Robinhood",
         url: "https://robinhood.com/", 
         searchurl: "https://robinhood.com/stocks/"
+    },
+    c: {
+        name: "Robinhood Crypto",
+        url: "https://robinhood.com/", 
+        searchurl: "https://robinhood.com/crypto/"
     },
     cal: {
         name: "Google Calendar",
