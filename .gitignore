@@ -3,3 +3,5 @@ node_modules/
 commandTable.js
 bundle.js
 compiled/
+*DS_Store
+stocks/
