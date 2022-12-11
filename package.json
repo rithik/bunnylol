@@ -5,7 +5,8 @@
     "build": "babel src/ -d compiled/",
     "bundle": "rollup compiled/app.js -o bundle.js -f cjs --compact",
     "minify": "minify --mangle bundle.js -o main.js",
-    "flow": "flow"
+    "flow": "flow",
+    "prepublish": "npm run build; npm run bundle; npm run minify"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
