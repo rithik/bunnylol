@@ -1,37 +1,34 @@
-// @flow strict
-
-export type CommandType = {|
-    name: string, 
-    url: string, 
+export type CommandType = {
+    name: string,
+    url: string,
     searchurl?: string,
-|};
+};
 
-export type CommandNames = 'fb' | 'm' | 'mw' | 'wa' | 'waw' | 'gm' | 'sis' | 'col' | 'yt' | 'tv' | 'gh' | 'r' | 'l' | 'me' | 'ig' | 'tw' | 'tr' | 'vs' | 'todo' |
-                           'c' | 'wf' | '$' | 'cal' | 'uvacovid' | 'hs' | 'p' | 'n' | 'h' | 'pv' | 'gd' | 'wp' | 'wsj' | 'cnn' | 'wiki' | 'g' | 'DEFAULT';
+export type CommandNames = 'gmail' | 'gdrive' | 'ghs' | 'gcal' | 'wiki' | 'g' | 'DEFAULT';
 
-export type CommandDataTableType = {|
-    name: string, 
-    url: string, 
+export type CommandDataTableType = {
+    name: string,
+    url: string,
     command: CommandNames
-|};
+};
 
-export type ColumnDataTableType = {| 
-    data: string, 
-    title: string 
-|};
+export type ColumnDataTableType = {
+    data: string,
+    title: string
+};
 
-export const COMMANDS: {[CommandNames] : CommandType} = {
-    gm: {
+export const COMMANDS: Record<CommandNames, CommandType> = {
+    gmail: {
         name: "Gmail",
         url: "https://mail.google.com/mail/u/0",
         searchurl: "https://mail.google.com/mail/u/"
     },
-    gd: {
+    gdrive: {
         name: "Google Drive",
         url: "https://drive.google.com/drive/u/0",
         searchurl: "https://drive.google.com/drive/u/"
     },
-    gh: {
+    ghs: {
         name: "GitHub",
         url: "https://github.com/",
         searchurl: "https://www.github.com/search?q="
@@ -41,7 +38,7 @@ export const COMMANDS: {[CommandNames] : CommandType} = {
         url: "https://google.com/",
         searchurl: "https://www.google.com/search?q="
     },
-    cal: {
+    gcal: {
         name: "Google Calendar",
         url: "https://calendar.google.com/calendar/r"
     },

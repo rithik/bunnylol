@@ -2,15 +2,20 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const router = express.Router();
 
-router.get('/',function(req, res){
-  res.sendFile(path.join(__dirname+'/index.html'));
+// Serve static files from the root directory
+app.use(express.static(path.join(__dirname)));
+
+// Serve the main HTML file
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.use('/', router);
+// Serve static files from 'static' directory
 app.use('/static', express.static(path.join(__dirname, 'static')));
-app.use('/lib', express.static(path.join(__dirname, 'lib')))
-app.listen(process.env.port || 3000);
 
-console.log('Running at Port 3000');
+// Use environment variable PORT or default to 3000
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
