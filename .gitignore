@@ -2,7 +2,6 @@ node_modules/
 .vscode/
 commandTable.js
 bundle.js
-main.js
 compiled/
 *DS_Store
 stocks/
