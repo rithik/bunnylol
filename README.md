@@ -40,14 +40,6 @@ cal | Google Calendar | [https://calendar.google.com/calendar/r](https://calenda
 covid | UVA COVID-19 Tracker | [https://returntogrounds.virginia.edu/covid-tracker](https://returntogrounds.virginia.edu/covid-tracker)
 DEFAULT | Default - Google Search | [https://google.com/](https://google.com/)
 
-## Local server
-
-1. Run `npm install` to install dependencies.
-
-2. Run `npm run server`.
-
-3. Navigate to `http://localhost:3000/?search=SEARCH_TERM` to verify the server is running.
-
 ## Setup
 
 1. Open Chrome and click the three dots. Click `Settings` and scroll down to `Search Engines`.

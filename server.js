@@ -10,9 +10,7 @@ router.get('/',function(req, res){
 
 app.use('/', router);
 app.use('/static', express.static(path.join(__dirname, 'static')));
-app.use('/main.js', express.static(path.join(__dirname, 'main.js')));
+app.use('/lib', express.static(path.join(__dirname, 'lib')))
+app.listen(process.env.port || 3000);
 
-const port = process.env.port || 3000;
-app.listen(port);
-
-console.log('Running at Port ' + port);
+console.log('Running at Port 3000');
